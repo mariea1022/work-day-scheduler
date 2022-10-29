@@ -8,8 +8,8 @@ var currentDayEl = document.querySelector('#currentDay');
 // handle displaying the current day
 function currentDay() {
     var dayToday = moment().format('dddd, MMMM Do');
-    console.log(dayToday)
-    currentDayEl.text(dayToday)
+    currentDayEl.textContent = dayToday
 }
 
 setInterval(currentDay, 1000);
+
