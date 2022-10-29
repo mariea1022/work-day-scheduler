@@ -6,10 +6,10 @@ var currentDayEl = document.querySelector('#currentDay');
 // constant variables
 
 // handle displaying the current day
-// function currentDay() {
-//     var dayToday = moment().format('dddd, MMMM Do');
-//     console.log(dayToday)
-//     currentDayEl.text(dayToday)
-// }
+function currentDay() {
+    var dayToday = moment().format('dddd, MMMM Do');
+    console.log(dayToday)
+    currentDayEl.text(dayToday)
+}
 
-// setInterval(currentDay, 1000);
+setInterval(currentDay, 1000);
