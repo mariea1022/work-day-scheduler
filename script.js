@@ -1,6 +1,7 @@
 // HOOKS to the DOM
 var currentDayEl = $('#currentDay');
 var textAreaEl = $('<textarea>');
+var containerEl = $('.container')
 
 // state variables
 
@@ -43,8 +44,10 @@ for (var i = 0; i < workHours.length; i++) {
         else if (timeToday < workHours[i]) {
             console.log("future");
             // remove past & present from true?
-            currentTimeBlock.classList.remove('past')
-            currentTimeBlock.classList.remove('present')
+            var futureTimeBlock = document.getElementById(`${workHours[i]}`)
+            futureTimeBlock.classList.remove('past')
+            futureTimeBlock.classList.remove('present')
+            
         }
         else {
             console.log("past");
@@ -52,17 +55,24 @@ for (var i = 0; i < workHours.length; i++) {
             // let currentTimeBlock = document.getElementById(`${workHours[i]}`)
             // currentTimeBlock.setAttribute("class", `${document.getElementById(`${workHours[i]}`).classList.value+" past"}`)
             // remove present & future from true?
+            var pastTimeBlock = document.getElementById(`${workHours[i]}`)
+            pastTimeBlock.classList.remove('present')
+            pastTimeBlock.classList.remove('future')
         }
     }
 }
     
-
+containerEl.addEventListener("click", function(event) {
+    var element = event.target;
+    if (element.matches("button") === true) {
+        saveEvent(event)
+    }
+})
 
 // function to save event entered in timeblock
-// function saveEvent() {
-// // click event
+function saveEvent() {
 // should be saved in local storage, so event persists despite refresing
-// }
+}
 
 
 
