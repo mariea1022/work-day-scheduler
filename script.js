@@ -16,14 +16,16 @@ function currentDay() {
     currentDayEl.text(dayToday);
 }
 
-// use for loop to get items from local storage?
-// function reload() {
-//     for (let i = 9; i < 18; i++) {
-//         document.getElementById(`${i}`).value = localStorage.getItem(`${i}`)
-//     }
-// }
+function reload() {
+    for (let i = 0; i < 9; i++) {
+        console.log(localStorage.getItem(i))
+        
+        
 
-// getFromLocalStorage()
+    }
+}
+
+
 
 // function to display if time is in the past, present or future
 // WHEN I view the timeblocks for that day
@@ -36,10 +38,9 @@ var btnList = document.getElementsByClassName('saveBtn')
     for (let i = 0; i < btnList.length; i++) {
         btnList[i].addEventListener('click', function(event) {
             var savedEntry = event.target.previousElementSibling.value;
-            console.log(savedEntry)
+            // console.log(savedEntry)
             // saving to local storage
-            localStorage.setItem(btnList[i], savedEntry)
-           
+            localStorage.setItem(i, savedEntry)
     })
 }
   
@@ -76,36 +77,19 @@ for (var i = 0; i < workHours.length; i++) {
 }
     
 // function to save event entered in timeblock
-// function saveEvent() {
 // should be saved in local storage, so event persists despite refresing
-
-// function saveEntry() {
-//     var savedEntry = document.getElementsByTagName('textarea')
-//     console.log(savedEntry[0].value)
-// //     var savedEntryList = document.getElementsByTagName('textarea')
-// //     for (var i = 0; i < savedEntryList.length; i++) {
-    
-// // //         btnList[i].addEventListener('click', function(event)
-// // }
-// }
-// // saveEntry()
-// $(document).ready(function(){
-//     $("button").click(function(){
-//         var comment = $.trim($("#9").val());
-//         if(comment != ""){
-//             // Show alert dialog if value is not blank
-//             alert(comment);
-//         }
-//     });
-    
-// });
-
-
-// setInterval(currentDay, 1000);
-// setInterval(timeDisplay, 1000);
 
 
 currentDay()
 timeDisplay()
+reload()
 
 
+// use for loop to get items from local storage?
+// function getFromLocalStorage() {
+//     for (let i = 9; i < 18; i++) {
+//         document.getElementById(`${i}`).value = localStorage.getItem(`${i}`)
+//     }
+// }
+
+// getFromLocalStorage()
