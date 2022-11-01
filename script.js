@@ -22,8 +22,7 @@ function currentDay() {
 // WHEN I view the timeblocks for that day
 // THEN each timeblock is color coded to indicate whether it is in the past, present, or future
 function timeDisplay() {
-    var timeToday = 11
-    // moment().format('H');
+    var timeToday = moment().format('H');
     // console.log(timeToday)
     
 for (var i = 0; i < workHours.length; i++) {
